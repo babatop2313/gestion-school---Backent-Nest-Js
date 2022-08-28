@@ -27,7 +27,18 @@ constructor(){
   findAll() {
     return this.students;
   }
-
+  findAllInRoom(idRoom: number){
+ 
+    let result = [];
+    for(let i=0 ; i< this.students.length; i++){
+  
+      if(this.students[i].idRoom == idRoom)
+      {   console.log('on est')
+        result.push(this.students[i]);
+      }
+    }
+    return result;
+  }
   findOne(id: number) {
     const index = this.students.findIndex((student) =>student.id == id);
     const result = this.students[index];

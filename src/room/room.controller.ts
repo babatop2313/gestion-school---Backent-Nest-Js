@@ -21,6 +21,10 @@ export class RoomController {
   findOne(@Param('id') id: string) {
     return this.roomService.findOne(+id);
   }
+  @Get(':id/students')
+  findStudentsInRoom(@Param('id') id: string) {
+    return this.roomService.findStudents(+id);
+  }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRoomDto: UpdateRoomDto) {
